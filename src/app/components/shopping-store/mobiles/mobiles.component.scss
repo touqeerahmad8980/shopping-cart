@@ -1,0 +1,47 @@
+.card{
+
+    .heading{
+    
+        margin-bottom: 30px;
+    
+    }
+    
+    img{
+    
+        transform: scale(0.7);
+    
+    }
+    
+    .btn{
+    
+        &.btn-outline-info{
+    
+            color: #17a2b8;
+            
+            &:hover {
+                
+                color: #fff;
+            
+            }
+    
+        }
+    
+        &:focus{
+    
+            box-shadow: none;
+    
+            outline: none;
+    
+        }
+    
+    }
+
+}
+
+.modal-dialog{
+
+    max-width: 70% !important;
+
+    min-height: auto !important;
+
+}

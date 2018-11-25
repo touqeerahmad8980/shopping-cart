@@ -1,0 +1,92 @@
+<!-- {{(data | async) | json}} -->
+<!-- 
+<ul>
+  <li >
+    <img src="{{images.imageUrl}}" alt="Norway">
+  </li>
+</ul> -->
+<div class="row">
+  <app-features></app-features>
+  <div class="col-sm-12">
+     <h3 class="heading">All Mobiles &amp; Tabs</h3>
+  </div>
+  <div class="col-sm-3" *ngFor="let data of (mobile_data|async)">
+      <div class="card" style="width:375px;margin-bottom: 30px;">
+        <img class="card-img-top" src="{{data.imageUrl}}" alt="Card image">
+        <div class="card-body">
+          <h4 class="card-title">{{data.price}}</h4>
+          <p class="card-title">{{data.name}}</p>
+          <a data-toggle="modal" data-target="#myModal" class="btn btn-lg btn-block btn-outline-info" (click)="mobile_feature(data.id)">Features</a>
+          <a href="#" class="btn btn-lg btn-block btn-primary">Add to Cart</a>
+        </div>
+      </div>
+  </div>
+  <!-- The Features Modal -->
+  <div class="modal fade" id="myModal">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+      
+        <div class="modal-header">
+          <h4 class="modal-title">{{(mobile_features | async)?.name}}</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-sm-7">
+              <table class="table table-hover">
+                <tbody>
+                  <tr>
+                    <th scope="row">Description</th>
+                    <td>{{(mobile_features | async)?.description}}</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Android</th>
+                    <td>{{(mobile_features | async)?.android.os}}</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Battery</th>
+                    <td>{{(mobile_features | async)?.battery.type}}  &nbsp;  {{(mobile_features | async)?.battery.talkTime}}</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Camera</th>
+                    <td>{{(mobile_features | async)?.camera.features}} &nbsp; {{(mobile_features | async)?.camera.primary}}</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Connectivity</th>
+                    <td>{{(mobile_features | async)?.connectivity.bluetooth}}</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Display</th>
+                    <td>{{(mobile_features | async)?.display.screenResolution}}</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Weight</th>
+                    <td>{{(mobile_features | async)?.sizeAndWeight.weight}}</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Storage</th>
+                    <td>{{(mobile_features | async)?.storage.ram}}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="col-sm-5">
+                <img src="{{(mobile_features | async)?.images}}" alt="Los Angeles" style="width:100%;">
+            </div>
+          </div>
+        </div>
+        
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+  <!-- <div *ngIf="mobile_features">   
+    cxcxc
+    {{(mobile_features|async) | json}}
+  </div> -->
+
+</div>
