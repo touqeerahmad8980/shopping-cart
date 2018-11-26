@@ -6,19 +6,22 @@
   </li>
 </ul> -->
 <div class="row">
-  <app-features></app-features>
+  <!-- <app-features></app-features> -->
   <div class="col-sm-12">
      <h3 class="heading">All Mobiles &amp; Tabs</h3>
   </div>
   <div class="col-sm-3" *ngFor="let data of (mobile_data|async)">
-      <div class="card" style="width:375px;margin-bottom: 30px;">
+      <div class="card">
+        <div class="overlay"></div>
         <img class="card-img-top" src="{{data.imageUrl}}" alt="Card image">
         <div class="card-body">
           <h4 class="card-title">{{data.price}}</h4>
           <p class="card-title">{{data.name}}</p>
-          <a data-toggle="modal" data-target="#myModal" class="btn btn-lg btn-block btn-outline-info" (click)="mobile_feature(data.id)">Features</a>
-          <a href="#" class="btn btn-lg btn-block btn-primary">Add to Cart</a>
         </div>
+        <span class="btn_wrap">
+          <a data-toggle="modal" data-target="#myModal" class="btn btn-lg btn-block btn-info" (click)="mobile_feature(data.id)">Features</a>
+          <a href="#" class="btn btn-lg btn-block btn-primary">Add to Cart</a>
+        </span>
       </div>
   </div>
   <!-- The Features Modal -->
@@ -28,7 +31,7 @@
       
         <div class="modal-header">
           <h4 class="modal-title">{{(mobile_features | async)?.name}}</h4>
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <a href="#" class="btn btn-primary">Add to Cart</a>
         </div>
         
         <div class="modal-body">
@@ -78,7 +81,7 @@
         </div>
         
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
         </div>
         
       </div>

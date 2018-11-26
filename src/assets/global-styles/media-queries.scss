@@ -1,0 +1,27 @@
+// Media Queries
+$break-largeest: "only screen and (min-width : 1280px)";
+
+$break-xxxlarge: "all and (min-width: 1160px) and (max-width: 1280px)";
+$break-xxxlarge2: "all and (max-width : 1160px)";
+$break-xxxlargeUp: "all and (min-width : 1160px)";
+
+$break-xxlargeUp: "all and (min-width: 960px)";
+$break-xxlarge: "all and (min-width: 960px) and (max-width: 1024px)";
+$break-xxlarge2: "all and (max-width : 1024px)";
+
+$break-xlargeUp: "all and (min-width: 768px)";
+$break-xlarge: "all and (min-width: 768px) and (max-width: 800px)";
+
+$break-xlarge2: "all and (max-width: 800px)";
+
+$break-largeUp: "all and (min-width: 640px)";
+$break-large: "all and (min-width: 640px) and (max-width: 667px)";
+$break-large2: "all and (max-width: 667px)";
+
+$break-medium: "all and (min-width: 540px) and (max-width: 568px)";
+
+$break-medium2: "all and (max-width: 568px)";
+
+$break-small: "all and (min-width: 400px) and (max-width: 480px)";
+
+$break-little: "all and (min-width: 320px) and (max-width: 375px)";
