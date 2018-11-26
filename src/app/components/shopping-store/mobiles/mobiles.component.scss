@@ -96,13 +96,23 @@
 
         .btn{
         
-            &.btn-info{
+            &.btn-info,&.btn-primary{
         
                 color: #fff;
+
+                font-weight: bold;
+                
+                background: transparent;
+                
+                border: 2px solid #fff;
                 
                 &:hover {
                     
-                    color: #fff;
+                    color: rgba(0, 0, 0, 0.9);
+
+                    background: #fff;
+
+                    animation: pulsating 1s infinite linear;
                 
                 }
         
@@ -152,3 +162,15 @@
 
 
 }
+
+@keyframes pulsating {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.05);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
