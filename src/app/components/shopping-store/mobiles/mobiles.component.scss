@@ -150,22 +150,33 @@
 
     min-height: auto !important;
 
+    .modal-header,.modal-footer{
+
+        background-color: #dadced;
+
+    }
     .modal-title{
 
         line-height: initial;
 
     }
 
-    .table tr{
+    .modal-body{
 
-        &:first-child{
+        // background: url('/assets/phones/images/features-backgournd.jpg');
 
-            td,th{
+        .table tr{
+    
+            &:first-child{
+    
+                td,th{
+                    
+                    border-top: none;
                 
-                border-top: none;
-            
+                }
+    
             }
-
+    
         }
 
     }
