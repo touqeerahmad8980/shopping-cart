@@ -9,9 +9,7 @@ import { MobilesComponent } from './components/shopping-store/mobiles/mobiles.co
 import { FeaturesComponent } from './components/shopping-store/mobiles/features/features.component';
 
 // material design modules
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MatCardModule} from '@angular/material/card';
-import {MatButtonModule, MatCheckboxModule} from '@angular/material';
+import {MatBadgeModule ,MatIconModule,MatButtonModule} from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -24,10 +22,10 @@ import {MatButtonModule, MatCheckboxModule} from '@angular/material';
     BrowserModule,
     HttpClientModule,
 
-    BrowserAnimationsModule,
-    MatCardModule,
-    MatButtonModule,
-    MatCheckboxModule
+    MatBadgeModule,
+    MatIconModule,
+    MatButtonModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

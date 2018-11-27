@@ -1,3 +1,64 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+    <div class="container">
+        <a class="navbar-brand" href="#"><span class="fa fa-opencart" style="font-size:40px;position: relative;bottom: -6px;line-height: 0;">&nbsp;</span>Shopping</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <!-- <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Link</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Dropdown
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="#">Action</a>
+                    <a class="dropdown-item" href="#">Another action</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link disabled" href="#">Disabled</a>
+                </li>
+            </ul> -->
+            <div class="navbar-nav mr-auto">&nbsp;</div>
+            <form class="form-inline pull-right">
+                <!-- <button type="button" class="btn btn-primary" style="margin-right:20px;">
+                    <span class="fa fa-cart-arrow-down" style="font-size:30px;position: relative;bottom: -3px;line-height: 0;margin-right: 5px;">&nbsp;</span>
+                    <span class="badge badge-light">9</span>
+                </button> -->
+                <!-- <p>
+                <span matBadge="4" matBadgeOverlap="false">Text with a badge</span>
+                </p> -->
+                
+                <a href="#"><mat-icon matBadgeColor="accent" matBadge="{{badgeCount}}" matBadgePosition="before" svgIcon="thumbs-up" style="position:relative;top:4px;color:#fff;margin-right:30px;" (click)="incrementCount()">&nbsp;</mat-icon></a>
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            </form>
+        </div>
+    </div>
+</nav>
+<!-- <nav class="navbar navbar-dark bg-primary navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+        <a class="navbar-brand" href="#home">MWM</a>
+        </div>
+        <div class="navbar-toggleable-sm collapse pull-md-right text-xs-center">
+        <ul class="nav navbar-nav">
+            <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Portfolio</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Resume</a></li>
+        </ul>
+        </div>
+    </div>
+</nav> -->
 <div class="container">
     <app-mobiles></app-mobiles>
 </div>
