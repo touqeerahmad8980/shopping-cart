@@ -19,8 +19,8 @@
           <p class="card-title">{{data.name}}</p>
         </div>
         <span class="btn_wrap">
-          <a data-toggle="modal" data-target="#myModal" class="btn btn-lg btn-block btn-info">Features</a>
-          <a class="btn btn-lg btn-block btn-primary" (click)="incrementCount()">Add to Cart</a>
+          <a data-toggle="modal" data-target="#myModal" class="btn btn-lg btn-block btn-info" (click)="mobile_feature(data.id)">Features</a>
+          <a class="btn btn-lg btn-block btn-primary" (click)='incrementCount()'>Add to Cart</a>
         </span>
       </div>
   </div>
@@ -31,7 +31,7 @@
       
         <div class="modal-header">
           <h4 class="modal-title">{{(mobile_features | async)?.name}}</h4>
-          <a href="#" class="btn btn-primary" >Add to Cart</a>
+          <a href="#" class="btn btn-primary">Add to Cart</a>
         </div>
         
         <div class="modal-body">

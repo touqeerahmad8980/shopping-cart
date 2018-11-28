@@ -18,6 +18,7 @@ export class AppComponent implements OnInit{
   // badgecount = this.child.incrementCount();
   title = 'Shooping-Cart-Application';
   constructor(iconRegistry: MatIconRegistry, sanitizer: DomSanitizer) {
+
     iconRegistry.addSvgIcon(
         'thumbs-up',
         sanitizer.bypassSecurityTrustResourceUrl('/assets/phones/svg/shopping_cart.svg'));
@@ -31,6 +32,7 @@ export class AppComponent implements OnInit{
     // console.log('only after T?HIS EVENT "child" is usable!!');
     // console.log(this.child.incrementCount());
   }
+
   ngOnInit(){
   }
 }
