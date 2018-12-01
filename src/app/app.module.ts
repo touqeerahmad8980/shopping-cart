@@ -8,8 +8,10 @@ import { ShoppingStoreComponent } from './components/shopping-store/shopping-sto
 import { MobilesComponent } from './components/shopping-store/mobiles/mobiles.component';
 import { FeaturesComponent } from './components/shopping-store/mobiles/features/features.component';
 
+import { PhoneServiceService } from './services/phone-service.service';
 // material design modules
 import {MatBadgeModule ,MatIconModule,MatButtonModule} from '@angular/material';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -24,10 +26,11 @@ import {MatBadgeModule ,MatIconModule,MatButtonModule} from '@angular/material';
 
     MatBadgeModule,
     MatIconModule,
-    MatButtonModule
+    MatButtonModule,
+    AppRoutingModule,
     
   ],
-  providers: [],
+  providers: [PhoneServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

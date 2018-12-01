@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { Component, OnInit} from '@angular/core';
+import { PhoneServiceService } from '../../../services/phone-service.service';
+import { Phones } from '../../../data-interface-types/phone';
 
 @Component({
   selector: 'app-mobiles',
@@ -7,24 +8,16 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./mobiles.component.scss']
 })
 export class MobilesComponent implements OnInit {
-
-  badgecount: number = 0;
-  mobile_features;
-  mobile_data = this.http.get(`assets/phones/phones.json`);
   
-  incrementCount(): void{
-    this.badgecount++;
-    console.log(this.badgecount);
-  }
-  constructor( private http:HttpClient) {
-
-   }
+  phones : Phones[];
+  constructor(private service: PhoneServiceService) {}
+  
   ngOnInit() {
-    console.log(this.incrementCount())
+    this.getPhones();
   }
-  
-  mobile_feature(id : string){
-    this.mobile_features = this.http.get(`assets/phones/details/${id}.json`);
+
+  getPhones(){
+    this.service.getPhonesData().subscribe(phone => this.phones = phone );
   }
 
 }
