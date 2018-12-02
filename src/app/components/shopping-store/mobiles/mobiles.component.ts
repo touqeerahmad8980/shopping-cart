@@ -1,6 +1,7 @@
 import { Component, OnInit} from '@angular/core';
 import { PhoneServiceService } from '../../../services/phone-service.service';
 import { Phones } from '../../../data-interface-types/phone';
+import { AngularFirestore } from '@angular/fire/firestore';
 
 @Component({
   selector: 'app-mobiles',
@@ -10,7 +11,9 @@ import { Phones } from '../../../data-interface-types/phone';
 export class MobilesComponent implements OnInit {
   
   phones : Phones[];
-  constructor(private service: PhoneServiceService) {}
+  constructor(private service: PhoneServiceService,
+    // private firestore : AngularFirestore
+    ) {}
   
   ngOnInit() {
     this.getPhones();
@@ -18,6 +21,11 @@ export class MobilesComponent implements OnInit {
 
   getPhones(){
     this.service.getPhonesData().subscribe(phone => this.phones = phone );
+  }
+
+  onItemClick(price: number){
+    // this.firestore.collection('add-to-cart').add(price.valueOf);
+    console.log("price: ",price);
   }
 
 }
