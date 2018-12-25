@@ -2,10 +2,6 @@ import { Component } from '@angular/core';
 import {DomSanitizer} from '@angular/platform-browser';
 import {MatIconRegistry} from '@angular/material';
 import { HttpClient, HttpHeaders } from "@angular/common/http";
-import { Observable, of } from 'rxjs';
-import { PhoneServiceService } from './services/phone-service.service';
-import { map, catchError, tap } from 'rxjs/operators';
-import { Response } from 'selenium-webdriver/http';
 
 export class POSTS {
   id: number;
@@ -34,7 +30,6 @@ export class AppComponent{
   
   constructor(
     private http:HttpClient,
-    private service: PhoneServiceService,
     iconRegistry: MatIconRegistry, sanitizer: DomSanitizer){
     iconRegistry.addSvgIcon('thumbs-up', sanitizer.bypassSecurityTrustResourceUrl('/assets/phones/svg/shopping_cart.svg'));
     //  http.get(this.url)

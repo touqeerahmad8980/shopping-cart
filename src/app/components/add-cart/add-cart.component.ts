@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {  PhoneServiceService } from '../../services/phone-service.service';
 import { Phones } from 'src/app/data-interface-types/phone';
-import { AngularFirestore } from '@angular/fire/firestore';
 import { HttpClient } from '@angular/common/http';
 
 @Component({
@@ -11,21 +10,23 @@ import { HttpClient } from '@angular/common/http';
 })
 export class AddCartComponent implements OnInit {
 
-  url='http://localhost:3000/phones';
-
   cart : Phones[];
-
-  constructor(private service : PhoneServiceService,private firestore: AngularFirestore,private http: HttpClient) { }
+  constructor(private service : PhoneServiceService,private http: HttpClient) { }
 
   ngOnInit() {
-    this.service.getCartData().subscribe(actionArray => this.cart = actionArray);
+    this.getCart();
   }
   
   onDelete(id){
-    this.http.delete(this.url+'/'+id)
+    this.http.delete(this.service.localServerUrl+'/'+id)
     .subscribe(response=>{
-      console.log(response)
+      console.log(response);
+      this.getCart();
     })
+  }
+  
+  getCart(){
+    this.service.getCartData().subscribe(actionArray => this.cart = actionArray);
   }
 
 }

@@ -13,14 +13,14 @@
             <td>
               <div class="media">
                 <div class="media-left">
-                  <img src="{{CData.imageUrl}}" class="media-object" style="width:60px">
+                  <img src="{{CData?.imageUrl}}" class="media-object" style="width:60px">
                 </div>
                 <div class="media-body">
                   <h4 class="media-heading">{{CData.name}}</h4>
                 </div>
               </div>
             </td>
-            <td>${{CData.id}}</td>
+            <td>${{CData.price}}</td>
             <td>1</td>
             <td>${{CData.price}}</td>
             <td><a (click)="onDelete(CData.id)" class="btn btn-danger">delete</a></td>

@@ -1,5 +1,6 @@
   <!-- The Features Modal -->
-  <h4 class="modal-title">{{(mobile_features | async)?.name}}</h4>
+<div *ngIf="mobile_features">
+  <h4 class="modal-title">{{mobile_features.name}}</h4>
   <!-- <a href="#" class="btn btn-primary" routerLink="/your-carts">Add to Cart</a> -->
   <div class="row">
       <div class="col-sm-7">
@@ -7,40 +8,41 @@
           <tbody>
             <tr>
               <th scope="row">Description</th>
-              <td>{{(mobile_features | async)?.description}}</td>
+              <td>{{mobile_features.description}}</td>
             </tr>
             <tr>
               <th scope="row">Android</th>
-              <td>{{(mobile_features | async)?.android.os}}</td>
+              <td>{{mobile_features.android.os}}</td>
             </tr>
             <tr>
               <th scope="row">Battery</th>
-              <td>{{(mobile_features | async)?.battery.type}}  &nbsp;  {{(mobile_features | async)?.battery.talkTime}}</td>
+              <td>{{mobile_features.battery.type}}  &nbsp;  {{mobile_features.battery.talkTime}}</td>
             </tr>
             <tr>
               <th scope="row">Camera</th>
-              <td>{{(mobile_features | async)?.camera.features}} &nbsp; {{(mobile_features | async)?.camera.primary}}</td>
+              <td>{{mobile_features.camera.features}} &nbsp; {{mobile_features.camera.primary}}</td>
             </tr>
             <tr>
               <th scope="row">Connectivity</th>
-              <td>{{(mobile_features | async)?.connectivity.bluetooth}}</td>
+              <td>{{mobile_features.connectivity.bluetooth}}</td>
             </tr>
             <tr>
               <th scope="row">Display</th>
-              <td>{{(mobile_features | async)?.display.screenResolution}}</td>
+              <td>{{mobile_features.display.screenResolution}}</td>
             </tr>
             <tr>
               <th scope="row">Weight</th>
-              <td>{{(mobile_features | async)?.sizeAndWeight.weight}}</td>
+              <td>{{mobile_features.sizeAndWeight.weight}}</td>
             </tr>
             <tr>
               <th scope="row">Storage</th>
-              <td>{{(mobile_features | async)?.storage.ram}}</td>
+              <td>{{mobile_features.storage.ram}}</td>
             </tr>
           </tbody>
         </table>
       </div>
       <div class="col-sm-5">
-          <img src="{{(mobile_features | async)?.images}}" alt="Los Angeles" style="width:100%;">
+          <img src="{{mobile_features.images}}" alt="Los Angeles" style="width:100%;">
       </div>
   </div>
+</div>
