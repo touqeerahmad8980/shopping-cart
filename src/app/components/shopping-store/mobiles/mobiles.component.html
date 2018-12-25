@@ -11,9 +11,8 @@
           <p class="card-title">{{data.name}}</p>
         </div>
         <span class="btn_wrap">
-            <a >Dashboard</a>
           <a [routerLink]="['/mobile-features', data.id]" class="btn btn-lg btn-block btn-info">Features</a>
-          <a class="btn btn-lg btn-block btn-primary" (click)="onItemClick(data.price, data.name)">Add to Cart</a>
+          <a routerLink="/my-carts" class="btn btn-lg btn-block btn-primary" (click)="addCart(data)">Add to Cart</a>
         </span>
       </div>
   </div>

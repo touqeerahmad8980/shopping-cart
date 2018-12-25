@@ -1,7 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
-
+import { FormsModule } from '@angular/forms'; // <-- NgModel lives here
+ 
 
 import { AppComponent } from './app.component';
 import { ShoppingStoreComponent } from './components/shopping-store/shopping-store.component';
@@ -28,7 +29,8 @@ import { environment } from '../environments/environment';
   imports: [
     BrowserModule,
     HttpClientModule,
-
+    FormsModule,
+    
     MatBadgeModule,
     MatIconModule,
     MatButtonModule,
