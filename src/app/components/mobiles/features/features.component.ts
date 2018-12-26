@@ -16,7 +16,7 @@ export class FeaturesComponent implements OnInit {
   constructor(private route: ActivatedRoute,private service: PhoneServiceService) { }
   
   ngOnInit() {
-    this.sub = this.route.params.subscribe(params => this.id = params['id']);
+    this.route.params.subscribe(params => this.id = params['id']);
     this.service.getPhonesFeatures(this.id).subscribe(data => this.mobile_features = data);
   }
 

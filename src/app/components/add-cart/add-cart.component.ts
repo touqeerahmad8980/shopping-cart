@@ -9,24 +9,27 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./add-cart.component.scss']
 })
 export class AddCartComponent implements OnInit {
-
-  cart : Phones[];
+  
+  cartData;
+  
   constructor(private service : PhoneServiceService,private http: HttpClient) { }
-
-  ngOnInit() {
+  
+   ngOnInit() {
+  
+    this.cartData = this.service.carts;
     this.getCart();
   }
   
   onDelete(id){
     this.http.delete(this.service.localServerUrl+'/'+id)
     .subscribe(response=>{
-      console.log(response);
       this.getCart();
+      console.log(response);
     })
   }
   
   getCart(){
-    this.service.getCartData().subscribe(actionArray => this.cart = actionArray);
+    this.service.getCartData().subscribe(actionArray => this.cartData = actionArray);
   }
 
 }
