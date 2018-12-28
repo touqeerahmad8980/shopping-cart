@@ -5,7 +5,7 @@
         <thead>
           <th>Product</th>
           <th>Unit Price</th>
-          <th>Quantity</th>
+          <th class="text-center">Quantity</th>
           <th>Total Price</th>
           <th></th>
         </thead>
@@ -22,12 +22,13 @@
                 </div>
               </td>
               <td>${{CData.price}}</td>
-              <td>1</td>
-              <td>${{CData.price}}</td>
-              <td><a (click)="onDelete(CData.id)" class="btn btn-danger">delete</a></td>
+              <td class="text-center"><input type="number" [(ngModel)]="CData.quantity" name="quantity" style="text-align:center;" /></td>
+              <td>${{CData.price*CData.quantity | number}}</td>
+              <td><a href="javascript:void(0);" (click)="onDelete(CData.id)" class="btn btn-danger">delete</a></td>
             </tr>
           </tbody>
       </table>
     </li>
+    <li>Total price <span>{{total}}</span></li>
   </ul>
 </div>

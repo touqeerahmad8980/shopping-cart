@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import {DomSanitizer} from '@angular/platform-browser';
 import {MatIconRegistry} from '@angular/material';
 import { HttpClient, HttpHeaders } from "@angular/common/http";
+import { AddCartComponent } from './components/add-cart/add-cart.component';
 
 export class POSTS {
   id: number;
@@ -18,6 +19,7 @@ export class POSTS {
 export class AppComponent{
 
   // title = 'Shooping-Cart-Application';
+
   post;
   posts : POSTS = {
     id: null,
@@ -71,25 +73,25 @@ export class AppComponent{
   //   })
   // }
   
-  edit(item){
-    this.posts = Object.assign({}, item);
-  }
+  // edit(item){
+  //   this.posts = Object.assign({}, item);
+  // }
 
-  updatePost(item) {
-    const httpOptions = {
-      headers: new HttpHeaders({'Content-Type': 'application/json'})
-    };
-    var body = { title: this.posts.title, body: 'bar', userId: 1 };
-    return this.http.put(this.url+'/'+item.id, body, httpOptions)
-    .subscribe(res => {
-        console.log(JSON.stringify(res));
-        // this.getData();
-        this.posts = Object.assign({}, item);
-      }, (err) => {
-        console.log(err);
-      }
-    );
-  }
+  // updatePost(item) {
+  //   const httpOptions = {
+  //     headers: new HttpHeaders({'Content-Type': 'application/json'})
+  //   };
+  //   var body = { title: this.posts.title, body: 'bar', userId: 1 };
+  //   return this.http.put(this.url+'/'+item.id, body, httpOptions)
+  //   .subscribe(res => {
+  //       console.log(JSON.stringify(res));
+  //       // this.getData();
+  //       this.posts = Object.assign({}, item);
+  //     }, (err) => {
+  //       console.log(err);
+  //     }
+  //   );
+  // }
 
 
 }

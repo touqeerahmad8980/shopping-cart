@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {  PhoneServiceService } from '../../services/phone-service.service';
-import { Phones } from 'src/app/data-interface-types/phone';
 import { HttpClient } from '@angular/common/http';
+import { Cart } from 'src/app/data-interface-types/cart';
 
 @Component({
   selector: 'app-add-cart',
@@ -10,12 +10,13 @@ import { HttpClient } from '@angular/common/http';
 })
 export class AddCartComponent implements OnInit {
   
-  cartData;
-  
+  cartData : Cart;
+  total: number;
+  // quantity = this.service.quantity;
+
   constructor(private service : PhoneServiceService,private http: HttpClient) { }
   
    ngOnInit() {
-  
     this.cartData = this.service.carts;
     this.getCart();
   }
